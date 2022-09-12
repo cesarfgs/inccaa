@@ -1,29 +1,29 @@
-var a = 1;
-let b = 2;
-const c = 3;
+//PRIMEIRA BATERIA DE TESTES - ANALISANDO ACESSO DE PAI >>>> FILHO
 
-console.log('Imprimindo variável A do bloco principal no bloco principal: ' + a);
-console.log('Imprimindo variável B do bloco principal no bloco principal: ' + b);
-console.log('Imprimindo variável C do bloco principal no bloco principal: ' + c);
+const declarandoComconst1 = 'teste1 com const';
+var declarandoComvar1 = 'teste1 com var';
+let declarandoComlet1 = 'teste1 com let';
 
 {
-    console.log('Imprimindo variável A do bloco principal no bloco "extra": ' + a); //tem acesso, pois o bloco é escopo filho do escopo principal
-    console.log('Imprimindo variável B do bloco principal no bloco "extra": ' + b); //tem acesso, pois o bloco é escopo filho do escopo principal
-    console.log('Imprimindo variável C do bloco principal no bloco "extra": ' + c); //tem acesso, pois o bloco é escopo filho do escopo principal
     
-    var aa = 11;
-    let bb = 22;
-    const cc = 33;
-
-    console.log('Imprimindo variável AA do bloco principal no bloco "extra": ' + aa);
-    console.log('Imprimindo variável BB do bloco principal no bloco "extra": ' + bb);
-    console.log('Imprimindo variável CC do bloco principal no bloco "extra": ' + cc);
+    console.log(declarandoComconst1);
+    console.log(declarandoComvar1);
+    console.log(declarandoComlet1);
+    
 }
 
-console.log('Imprimindo variável A do bloco principal APÓS o bloco "extra": ' + a);
-console.log('Imprimindo variável A do bloco principal APÓS o bloco "extra": ' + b);
-console.log('Imprimindo variável A do bloco principal APÓS o bloco "extra": ' + c);
+//SEGUNDA BATERIA DE TESTES - ANALISANDO ACESSO DE FILHO >>>> PAI
 
-console.log('Imprimindo variável AA do bloco "extra" no bloco principal: ' + aa); //Declarando com VAR, sempre "vaza" do escopo. Declarações deste tipo tem característica GLOBAL
-//console.log(bb); //Declarado dentro do bloco, não "vaza"
-//console.log(cc); //Declarado dentro do bloco, não "vaza"
+{
+
+    {
+        const declarandoComconst2 = 'teste2 com const';
+        var declarandoComvar2 = 'teste2 com var';
+        let declarandoComlet2 = 'teste2 com let';
+    }
+
+//console.log(declarandoComconst2);
+console.log(declarandoComvar2);
+//console.log(declarandoComlet2);
+
+}
